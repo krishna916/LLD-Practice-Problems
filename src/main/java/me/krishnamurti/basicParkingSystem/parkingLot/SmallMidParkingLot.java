@@ -91,7 +91,7 @@ public class SmallMidParkingLot implements ParkingLot
 		long hoursParked = Util.getDeltaHours(parkedVehicle.getEntryTime(), exitTime);
 		System.out.println("Total Parked hours: " + hoursParked);
 		freeUpAllocatedSlot(occupiedSlot);
-		return (int)hoursParked * parkedVehicle.getSlotType().getPrice();
+		return (int)hoursParked * occupiedSlot.getSlotType().getPrice();
 	}
 
 
@@ -136,9 +136,9 @@ public class SmallMidParkingLot implements ParkingLot
 
 	private void freeUpAllocatedSlot(ParkingSlot slot) {
 		ParkingVehicle parkedVehicle = slot.getParkedVehicle();
-		if (parkedVehicle.getSlotType() == ParkingSlotType.SMALL) {
+		if (slot.getSlotType() == ParkingSlotType.SMALL) {
 			occupiedSmallParkingLot--;
-		} else if (parkedVehicle.getSlotType() == ParkingSlotType.MID) {
+		} else if (slot.getSlotType() == ParkingSlotType.MID) {
 			occupiedMidParkingLot--;
 		}
 		occupiedParkingLotCarMap.remove(parkedVehicle.getVehicleId());

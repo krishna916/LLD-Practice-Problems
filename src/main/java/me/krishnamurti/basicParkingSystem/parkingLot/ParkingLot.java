@@ -1,9 +1,8 @@
 package me.krishnamurti.basicParkingSystem.parkingLot;
 
-import me.krishnamurti.basicParkingSystem.parkingSlot.ParkingSlot;
 import me.krishnamurti.basicParkingSystem.parkingSlot.ParkingVehicle;
 
-import java.util.List;
+
 
 public interface ParkingLot
 {
